@@ -1,1 +1,41 @@
-# bg-gradski-prevoz
+# bg-gradski-prevoz // Belgrade Public Transport Simple Route Gen
+
+## ***C Programming App Showcase - Belgrade Public Transport Simple Route Gen - srb edition***
+
+This simple **console app** works with static(already given)[^1] data represented as text files made of stations:
+  
+  `NumOfStation;NameOfStation;LatitudeCoord;LongitudeCoord;ZoneOfTransport` as one line in file.
+  
+  For example: `7!Pristaniste!44.8189915!20.4495147!1` in file `2_dirA.txt` represents one station of Line 2 in direction A
+  
+  Every transport line is represented in 2 files: direction A and direction B.
+  
+  ## How to configure the app
+  
+  After cloning the repo with `git clone repo_path`, lines from directory linije/, should be copied alongside with Source.cpp because of relative path of files. The output text file should also be made before use.
+  
+  ## How to use the app
+  
+  Functionality of this app is behind the main functions arguments[^2]. This app was developed in MS Visual Studio, so editing command line arguments won't be same as editing in different IDEs:
+  - Right click on Project_Name in Solution Explorer -> Properties
+  - Find 'Debugging' and open
+  - On the left side of window is Command-line arguments field, where data should be put in this particular way:
+  
+  `Output_file x1 y1 x2 y2 line1 line2 ... lineN`, where Output_file is name of output text file where results are displayed, x and y are coordinates of start and end stations and line1, ... lineN are N different transport lines that User want to use.
+  
+For example `output.txt 44.8189915 20.4495147 43.8129315 21.2494517 2 74 24`
+  
+## Results
+
+Expected result of the app is visible in the **Output file** set as the first argument in Command-line arguments: list of all stations for each specified line that user has to go through in order to get to the end point(x2 y2 coords).
+
+If we refer to the previous example, our Output file would have all the stations for lines 2, 74 and 24
+
+## Future changes
+
+Changes expected to be done in near future:
+- **Make dynamic version of the app but in vanilla python or some specific python framework**
+- Add another way of inserting data
+  
+  [^1]: Dynamic version under construction :smile:
+  [^2]: In C programming(as well as in some other C-like langs), main function has different forms. In this case, main is defined like this: int main(int argc, char** argv)
